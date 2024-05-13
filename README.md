@@ -2,15 +2,15 @@ This project is built to demonstrate a GraphQL API built in Node.js. It uses the
 
 Phase 1 - Is a mininum viable product that uses hard coded data as the source for the GraphQL API.
 
-Phase 2 - Is to use the CSV data from https://data.sfgov.org/api/views/rqzj-sfat/rows.csv to populate either a Mongo (NoSQL) or Sqlite DB and then use that DB for the GraphQL API.
+Phase 2 - Is to read the CSV data from https://data.sfgov.org/api/views/rqzj-sfat/rows.csv to populate either a Mongo (NoSQL) or Sqlite DB and then use that DB for the GraphQL API.
 
 * Given the shape of the data and that the intended use is for a GraphQL API, it fits best with a NoSQL approach.
 * It makes the most sense to me to continue storing this data in a flattened structure.
 * It all belongs to a single domain and breaking it into multiple tables for a relational DB just adds complexity for writing migrations and queries.
 * We could store all of the data in a single relational DB table, which would work, but:
-**  There are a lot of fields that would need to be searched as text or at least enums and we would need to set up multiple indexes for performance.
-**  If the app becomes successful, then NoSQL DBs can handle higher amounts of reads better
-**  If th API provider adds or removes fields or if we want to populate this with custom information, perhaps related to GPS boundaries, then it is a better fit for NoSQL
+*    There are a lot of fields that would need to be searched as text or at least enums and we would need to set up multiple indexes for performance.
+*    If the app becomes successful, then NoSQL DBs can handle higher amounts of reads better
+*    If th API provider adds or removes fields or if we want to populate this with custom information, perhaps related to GPS boundaries, then it is a better fit for NoSQL
 
 Phase 3 - Is launching the app as a microservice
 
