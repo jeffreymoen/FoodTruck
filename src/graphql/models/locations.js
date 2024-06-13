@@ -56,7 +56,7 @@ export const typeDef = `#graphql
 
 export const resolvers = {
   Query: {
-    getAllLocations: (_, _, { mongo }) => {
+    getAllLocations: (parent, args, { mongo }) => {
       return mongo.locations.find().toArray();
     },
     getLocation: async (_, { id }, { mongo }) => {
